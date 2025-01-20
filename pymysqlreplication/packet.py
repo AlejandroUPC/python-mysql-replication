@@ -427,6 +427,7 @@ class BinLogPacketWrapper(object):
             size = self.read_uint16()
 
         if size > length:
+            return {}
             raise ValueError('Json length is larger than packet length')
 
         if large:
@@ -465,6 +466,7 @@ class BinLogPacketWrapper(object):
             size = self.read_uint16()
 
         if size > length:
+            return {}
             raise ValueError('Json length is larger than packet length')
 
         values_type_offset_inline = [
